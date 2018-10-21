@@ -1,0 +1,49 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2><strong><i class="fa fa-plus" aria-hidden="true"></i> {{ title }}</strong></h2>
+    </div>
+    <form style="margin-bottom: 0" class="form-horizontal" method="post" novalidate>
+        <div class="panel-body">
+            {% csrf_token %}
+
+            <div class="text-danger">{{ form.non_field_errors }}</div>
+
+            <div class="form-group">
+                <label for="id_product_name" class="col-md-2 control-label">Product Name</label>
+                <div class="col-md-10">
+                    {{ form.product_name }}
+                    <span class="text-danger">{{ form.errors.product_name | striptags }}</span>
+                </div>
+                
+            </div>
+            
+            <div class="form-group">
+                <label for="id_price" class="col-md-2 control-label">Price</label>
+                <div class="col-md-10">
+                    {{ form.price }}
+                    <span class="text-danger">{{ form.errors.price | striptags }}</span>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="id_quantity" class="col-md-2 control-label">Quantity</label>
+                <div class="col-md-10">
+                    {{ form.quantity }}
+                    <span class="text-danger">{{ form.errors.quantity | striptags }}</span>
+                </div>
+            </div>
+         
+        </div>
+        
+        <div class="panel-footer">
+            <button class="btn btn-success" type="submit"><i class="fa fa-floppy-o" aria-hidden="true"></i> Create</button>
+            <a class="btn btn-primary" href="{% url 'products' %}"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back to List</a>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

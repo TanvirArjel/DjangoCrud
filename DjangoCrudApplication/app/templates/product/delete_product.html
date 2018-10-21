@@ -1,0 +1,55 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h2><strong><i class="fa fa-trash-o" aria-hidden="true"></i> {{ title }}</strong></h2>
+    </div>
+    <div class="panel-body">
+        <div class="alert alert-danger">
+            <strong>Delete!</strong> Are you sure you want to delete this product?
+        </div>
+        <div class="form-horizontal">
+
+            <div class="form-group">
+                <label class="control-label col-sm-2">Product Name</label>
+                <div class="col-sm-10">
+                    <div class="form-control">
+                        {{product.product_name}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2">Price</label>
+                <div class="col-sm-10">
+                    <div class="form-control">
+                        {{product.price}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2">Quantity</label>
+                <div class="col-sm-10">
+                    <div class="form-control">
+                        {{product.quantity}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer">
+        <form method="post">
+            {% csrf_token %}
+            <button class="btn btn-danger" type="submit"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+            <a class="btn btn-primary" href="{% url 'products' %}"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back to List</a>
+        </form>
+    </div>
+</div>
+
+
+
+{% endblock %}
