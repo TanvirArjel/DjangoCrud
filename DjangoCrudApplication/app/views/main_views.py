@@ -35,6 +35,7 @@ def contact(request):
 def about(request):
     """Renders the about page."""
     assert isinstance(request, HttpRequest)
+    
     return render(
         request,
         'app/about.html',

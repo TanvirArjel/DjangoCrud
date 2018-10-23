@@ -9,8 +9,10 @@ from django.contrib import admin
 admin.autodiscover()
 from app.forms import authentication_forms
 from app.views import main_views
+from app.views import product_views
 # Examples:
 urlpatterns = [
+    url(r'', include('app.urls.product_urls')),
     url(r'^$', main_views.home, name='home'),
     url(r'^contact$', main_views.contact, name='contact'),
     url(r'^about$', main_views.about, name='about'),
@@ -26,6 +28,5 @@ urlpatterns = [
 
    
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-    url(r'^admin/', admin.site.urls),
-    url(r'^', include('app.urls.product_urls')),
+    url(r'^admin/', admin.site.urls)
 ]

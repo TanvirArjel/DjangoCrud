@@ -35,8 +35,13 @@
     <Compile Include="app\forms\product_forms.py" />
     <Compile Include="app\forms\__init__.py" />
     <Compile Include="app\migrations\0001_initial.py" />
-    <Compile Include="app\models.py" />
-    <Compile Include="app\tests.py" />
+    <Compile Include="app\models\product.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app\models\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app\tests\tests.py" />
     <Compile Include="app\urls\product_urls.py" />
     <Compile Include="app\urls\__init__.py" />
     <Compile Include="app\views\main_views.py" />
@@ -55,6 +60,8 @@
     <Folder Include="app\forms\" />
     <Folder Include="app\forms\__pycache__\" />
     <Folder Include="app\migrations\" />
+    <Folder Include="app\models\" />
+    <Folder Include="app\tests\" />
     <Folder Include="app\static\" />
     <Folder Include="app\static\app\" />
     <Folder Include="app\static\app\content\" />
@@ -87,10 +94,10 @@
     <Content Include="app\static\app\library\font-awesome\fonts\fontawesome-webfont.woff2" />
     <Content Include="app\static\app\library\font-awesome\fonts\FontAwesome.otf" />
     <Content Include="app\templates\product\create_product.html" />
-    <Content Include="app\templates\product\delete_product.html" />
     <Content Include="app\templates\product\product_details.html" />
-    <Content Include="app\templates\product\product_list.html" />
     <Content Include="app\templates\product\update_product.html" />
+    <Content Include="app\templates\product\delete_product.html" />
+    <Content Include="app\templates\product\product_list.html" />
     <Content Include="app\urls\__pycache__\product_urls.cpython-37.pyc" />
     <Content Include="app\urls\__pycache__\__init__.cpython-37.pyc" />
     <Content Include="app\views\__pycache__\main_views.cpython-37.pyc" />
