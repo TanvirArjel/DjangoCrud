@@ -6,7 +6,7 @@
     <div class="panel-heading">
         <h2><strong><i class="fa fa-plus" aria-hidden="true"></i> {{ title }}</strong></h2>
     </div>
-    <form style="margin-bottom: 0" class="form-horizontal" method="post" novalidate>
+    <form style="margin-bottom: 0" class="form-horizontal" method="post" enctype="multipart/form-data" novalidate>
         <div class="panel-body">
             {% csrf_token %}
 
@@ -34,6 +34,16 @@
                 <div class="col-md-10">
                     {{ form.quantity }}
                     <span class="text-danger">{{ form.errors.quantity | striptags }}</span>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="id_product_image" class="col-md-2 control-label">Product Image</label>
+                <div class="col-md-10">
+                    <div class="form-control">
+                        {{ form.product_image }}
+                    </div>
+                    <span class="text-danger">{{ form.errors.product_image | striptags }}</span>
                 </div>
             </div>
          

@@ -80,6 +80,7 @@
     <Folder Include="app\views\__pycache__\" />
     <Folder Include="DjangoCrudApplication\" />
     <Folder Include="DjangoCrudApplication\__pycache__\" />
+    <Folder Include="media\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\forms\__pycache__\authentication_forms.cpython-37.pyc" />
@@ -108,6 +109,7 @@
     <Content Include="DjangoCrudApplication\__pycache__\wsgi.cpython-37.pyc" />
     <Content Include="DjangoCrudApplication\__pycache__\__init__.cpython-37.pyc" />
     <Content Include="libman.json" />
+    <Content Include="media\Capture2.PNG" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />

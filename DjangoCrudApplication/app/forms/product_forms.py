@@ -8,6 +8,9 @@ class ProductForm(forms.ModelForm):
                                    widget=forms.TextInput({'class': 'form-control','placeholder': 'Enter product price'}))
     quantity = forms.IntegerField(error_messages={'required': 'Product quantity is required!'},
                                    widget=forms.NumberInput({'class': 'form-control','placeholder': 'Enter product quantity'}))
+
+    product_image = forms.ImageField(required=False)
+
     class Meta:
         model = Product
         fields = '__all__'

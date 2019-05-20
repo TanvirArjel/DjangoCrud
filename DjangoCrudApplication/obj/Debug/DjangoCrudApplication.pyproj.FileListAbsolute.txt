@@ -1,1 +1,0 @@
-D:\Python Learning\DjangoCrudApplication\DjangoCrudApplication\obj\Debug\DjangoCrudApplication.pyproj.CoreCompileInputs.cache

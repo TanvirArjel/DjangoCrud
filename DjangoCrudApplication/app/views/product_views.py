@@ -1,9 +1,10 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from app.forms.product_forms import ProductForm
+from app.models.product import Product
 from django.http import HttpRequest
 from django.template import RequestContext
 from datetime import datetime
-from app.models.product import Product
+from django.core.files.storage import FileSystemStorage
 
 def product_list(request):
     assert isinstance(request, HttpRequest)
@@ -19,10 +20,17 @@ def create_product(request):
     assert isinstance(request, HttpRequest)
     form = ProductForm(request.POST or None)
 
-    if request.method == "POST":
-        if form.is_valid():
-           form.save()
-           return redirect('products')
+    
+    if request.method == "POST" and request.FILES.get('product_image'):
+        myfile = request.FILES['product_image']
+        product_to_be_created = request.POST.copy()
+        product_to_be_created.update({'product_image': myfile.name})
+        updated_form = ProductForm(data = product_to_be_created)
+        if updated_form.is_valid():
+            fs = FileSystemStorage()
+            filename = fs.save(myfile.name, myfile)
+            updated_form.save()
+            return redirect('products')
 
     return render(request,'product/create_product.html',
                   {
